@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "promptemon"
+version = "0.1.0"
+description = "A fun python game in which you can generate using OpenAI APIs Promptemons and participate in battles"
+authors = ["Valentin Gorce"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+Flask = "3.0.0"
+langchain = "0.0.315"
+openai = "0.28.1"
+tenacity = "8.2.3"
+requests = "2.31.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

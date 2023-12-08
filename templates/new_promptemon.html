@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>New Promptemon</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="d-flex justify-content-center align-items-center">
+        <div class="card d-flex justify-content-center align-items-center">
+            
+            <div class="card-body row">
+                <div class="col-md-6">
+                    <img class="card-img-top" src="{{img_path}}" alt="Promptemon Image" style="max-width: 256px; height: auto;">
+                </div>
+                <div class="col-md-6">
+                    <h5 class="card-title">New Promptemon</h5>
+                    <ul>
+                        <li>Type1: {{stats.type1}}</li>
+                        <li>Type2: {{stats.type2}}</li>
+                        <li>HP: {{stats.hp}}</li>
+                        <li>ATK: {{stats.attack}}</li>
+                        <li>DEF: {{stats.defense}}</li>
+                        <li>ATK Spe: {{stats.spe_atk}}</li>
+                        <li>DEF Spe: {{stats.spe_def}}</li>
+                    </ul>
+                </div>
+            </div>
+            <div>
+                <h5 class="card-title">Skills:</h5>
+                <ul class="skills-list">
+                    {% for skill in stats.skills %}
+                    <li><b>{{skill.name}}: </b>Damages: {{skill.damage}}, Type: {{skill.type}}, {{skill.kind}}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div>
+                <a href="/battle" class="btn btn-primary" style="margin:10px">Ready for battle</a>
+                <a href="/" class="btn btn-danger" style="margin:10px">Retry</a>
+            </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,11 @@
+*.ipynb
+venv
+venv39
+.env
+__pycache__
+poubelle
+static/*/*
+
+!static/images/3bcac39e9c6326b5c4a0216c5900091f6b752992297f386d23033c200802c1ce.jpg
+!static/images/7d63baef2436eb48eb5bbe8ce7d4fcdf9820daa322516e677f381da746b48396.jpg
+!static/images/9e00b1c47a5ab8e972820b390de57467105504826c222c85518ee872dd96c864.jpg

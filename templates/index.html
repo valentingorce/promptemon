@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Promptemon</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Generate a new Promptemon!</h1>
+        <form class="form-group" action="/generate" method="POST">
+            <textarea rows="5" 
+                        style="width: 100%;" 
+                        placeholder="Describe your Promptemon"
+                        id="description" 
+                        type="text" 
+                        name="description" 
+                        class="form-control"></textarea>
+            <button type="submit" class="btn btn-primary" style="margin:10px">Submit</button>
+        </form>
+    </div>
+    <div class="container">
+        <h1>...Or select one of you registered ones!</h1>
+        <form id="promptemonForm" action="/pick" method="POST">
+            <ul id="promptemonList" class="list-group">
+                {% for promptemon in promptemons %}
+                <li class="list-group-item">
+                    <div class="row">
+                        <div class="col-md-1">
+                            <div class="container" style="margin: 0;position: absolute;top: 50%;-ms-transform: translateY(-50%);transform: translateY(-50%);">
+                                <label>
+                                    <input type="radio" 
+                                            value="{{promptemon.u_id}}" 
+                                            name="picked_one"> Pick
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <img src="{{promptemon.img_path}}">
+                        </div>
+                        <div class="col-md-7">
+                            <p>Stats: {{promptemon.base_stats}}</p>
+                        </div>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+            <input type="submit" value="Submit" class="btn btn-primary">
+        </form>
+    </div>
+</body>
+</html>
