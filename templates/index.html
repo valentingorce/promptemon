@@ -19,7 +19,7 @@
         </form>
     </div>
     <div class="container">
-        <h1>...Or select one of you registered ones!</h1>
+        <h1>...Or select one you previously generated!</h1>
         <form id="promptemonForm" action="/pick" method="POST">
             <ul id="promptemonList" class="list-group">
                 {% for promptemon in promptemons %}
@@ -34,17 +34,70 @@
                                 </label>
                             </div>
                         </div>
-                        <div class="col-md-4">
-                            <img src="{{promptemon.img_path}}">
+                        <div class="col-md-3">
+                            <div style="margin: 0;position: absolute;top: 50%;-ms-transform: translateY(-50%);transform: translateY(-50%);">
+                                <img src="{{promptemon.img_path}}">
+                            </div>
                         </div>
-                        <div class="col-md-7">
-                            <p>Stats: {{promptemon.base_stats}}</p>
+                        <div class="col-md-8">
+                            <div class="card">
+                              <div class="card-header">
+                                <h5 class="card-title">Promptemon Details</h5>
+                              </div>
+                              <div class="card-body row">
+                                <div class="col">
+                                    <dl class="row">
+                                    <dt class="col-sm-3">Type 1</dt>
+                                    <dd class="col-sm-9">{{promptemon.base_stats.type1}}</dd>
+                            
+                                    <dt class="col-sm-3">Type 2</dt>
+                                    <dd class="col-sm-9">{{promptemon.base_stats.type2}}</dd>
+                            
+                                    <dt class="col-sm-3">Attack</dt>
+                                    <dd class="col-sm-9">{{promptemon.base_stats.attack}}</dd>
+                            
+                                    <dt class="col-sm-3">Defense</dt>
+                                    <dd class="col-sm-9">{{promptemon.base_stats.defense}}</dd>
+                            
+                                    <dt class="col-sm-3">HP</dt>
+                                    <dd class="col-sm-9">{{promptemon.base_stats.hp}}</dd>
+                            
+                                    <dt class="col-sm-3">Speed</dt>
+                                    <dd class="col-sm-9">{{promptemon.base_stats.speed}}</dd>
+                            
+                                    <dt class="col-sm-3">Special Attack</dt>
+                                    <dd class="col-sm-9">{{promptemon.base_stats.spe_atk}}</dd>
+                            
+                                    <dt class="col-sm-3">Special Defense</dt>
+                                    <dd class="col-sm-9">{{promptemon.base_stats.spe_def}}</dd>
+                                    </dl>
+                                </div>
+                                <div class="col">
+                                    <h5 class="card-title">Skills</h5>
+                                    <ul class="list-group">
+                                    {% for skill in promptemon.base_stats.skills %}
+                                        <li class="list-group-item">
+                                        <strong>{{ skill.name }}</strong>
+                                        <br>
+                                        <span>Type: {{ skill.type }}</span>
+                                        <br>
+                                        <span>Kind: {{ skill.kind }}</span>
+                                        <br>
+                                        <span>Damage: {{ skill.damage }}</span>
+                                        </li>
+                                    {% endfor %}
+                                    </ul>
+                                </div>
+                              </div>
+                            </div>
                         </div>
                     </div>
                 </li>
                 {% endfor %}
             </ul>
-            <input type="submit" value="Submit" class="btn btn-primary">
+            <div class="container" style="margin-top:10px;margin-bottom:20px;">
+                <input type="submit" value="Choose" class="btn btn-success"></div>
+            </div>
         </form>
     </div>
 </body>
