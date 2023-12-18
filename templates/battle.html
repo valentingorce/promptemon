@@ -81,7 +81,7 @@
             <label for="skillsChoice">Choose a skill:</label>
             <select name="skillsChoice" id="skillsChoice" class="form-select">
                 {% for skill in ally.skills %}
-                    <option value="{{skill.name}}">{{skill}}</option>
+                    <option value="{{skill.name}}">{{skill.name}}: {{skill.damage}} / {{skill.type}} / {{skill.kind}}</option>
                 {% endfor %}
             </select>
             <button type="submit" class="btn btn-primary" style="margin-top:10px;">Submit</button>
