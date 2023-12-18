@@ -2,6 +2,8 @@
 
 Promptemon is a little game in which you can imagine Promptemons and with the magic of OpenAI APIs, you will be able to engage in battles with them!
 
+![Local Image](promptemon_battle_screen.png)
+
 ## Installation
 
 Use the package manager [pip](https://pip.pypa.io/en/stable/) to install promptemon.
